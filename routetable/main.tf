@@ -10,3 +10,8 @@ resource "aws_route_table" "public_rt" {
     Name = var.rt_name
   }
 }
+resource "aws_route_table_association" "public_assoc" {
+  subnet_id      = var.subnet_id
+  route_table_id = aws_route_table.public.id
+}
+
