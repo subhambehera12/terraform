@@ -3,15 +3,15 @@ variable "rt_name" {
   description = "Name of the Route Table"
 }
 
-variable "vpc_name" {
+variable "vpc_id" {
   type        = string
   description = "VPC name for Route Table"
 }
-variable "subnet_name" {
+variable "subnet_id" {
   type        = string
   description = "Subnet name to associate with Route Table"
 
-variable "igw_name" {
+variable "igw_id" {
   type        = string
   description = "Internet Gateway name for default route"
 }
