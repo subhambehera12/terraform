@@ -19,5 +19,8 @@ resource "aws_subnet" "public_subnet" {
     Name = var.public_subnet_name
   }
 }
+output "subnet_id" {
+  value = aws_subnet.public.id
+}
 
 
