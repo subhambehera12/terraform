@@ -7,6 +7,9 @@ variable "vpc_id" {
   type        = string
   description = "VPC ID for Route Table"
 }
+variable "subnet_id" {
+  type        = string
+  description = "Subnet ID to associate with Route Table"
 
 variable "igw_id" {
   type        = string
