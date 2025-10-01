@@ -11,7 +11,6 @@ resource "aws_vpc" "my_vpc" {
     Name = var.vpc_name
   }
 }
-
 output "vpc_id" {
   value = aws_vpc.my_vpc.id
 }
