@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'terraform/vpc/**'
   workflow_dispatch:
 
 jobs:
@@ -39,21 +41,25 @@ jobs:
 
       # --- Terraform Init ---
       - name: Terraform Init
+        working-directory: terraform/vpc
         run: terraform init
 
       # --- Terraform Format Check ---
       - name: Terraform Format
+        working-directory: terraform/vpc
         run: terraform fmt -check
 
       # --- Terraform Validate ---
       - name: Terraform Validate
+        working-directory: terraform/vpc
         run: terraform validate
 
       # --- Terraform Plan ---
       - name: Terraform Plan
+        working-directory: terraform/vpc
         run: terraform plan -out=tfplan
 
       # --- Terraform Apply ---
-      - name: Terraform Apply
-        if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve
+    #   - name: Terraform Apply
+    #     if: github.ref == 'refs/heads/main'
+    #     run: terraform apply -auto-approve
